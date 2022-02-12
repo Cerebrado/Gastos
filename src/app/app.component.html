@@ -1,0 +1,31 @@
+<ul class="nav nav-pills nav-justified">
+  <li class="nav-item" (click)="setSelectedTab(0)">
+    <a
+      class="nav-link"
+      [ngClass]="{ active: selectedTab == 0 }"
+      aria-current="page"
+      href="#"
+    >
+      <span class="material-icons">euro</span>
+    </a>
+  </li>
+  <li class="nav-item" (click)="setSelectedTab(1)">
+    <a class="nav-link" href="#" [ngClass]="{ active: selectedTab == 1 }">
+      <span class="material-icons">leaderboard</span>
+    </a>
+  </li>
+  <li class="nav-item" (click)="setSelectedTab(2)">
+    <a class="nav-link" href="#" [ngClass]="{ active: selectedTab == 2 }">
+      <span class="material-icons">settings</span>
+    </a>
+  </li>
+</ul>
+<div *ngIf="selectedTab == 0">
+  <app-gastos></app-gastos>
+</div>
+<div *ngIf="selectedTab == 1">
+  <app-stats></app-stats>
+</div>
+<div *ngIf="selectedTab == 2">
+  <app-settings></app-settings>
+</div>
