@@ -22,7 +22,9 @@
   <br />
   <h3 *ngIf="selectedTab == 0" class="text-danger">Gastos</h3>
   <h3 *ngIf="selectedTab == 1" class="text-success">Ingresos</h3>
-
-
-  
+  <ul>
+    <li *ngFor="let categ of getUniqueCategories()">
+      {{ categ }}
+    </li>
+  </ul>
 </div>

@@ -4,6 +4,11 @@ export class DataModel {
 
   constructor() {
     this.Settings = new Settings();
+    this.Settings.OutcomesList = [
+      new Item('Baño', 'Jabon', 0),
+      new Item('Baño', 'Shampoo', 0),
+      new Item('limpieza', 'Escoba', 0),
+    ];
     this.Operation = new Array<Operation>();
   }
 }
@@ -12,6 +17,12 @@ export class Item {
   public Category: string;
   public Name: string;
   public Price: number;
+
+  constructor(category: string, name: string, price: number) {
+    this.Category = category;
+    this.Name = name;
+    this.Price = price;
+  }
 }
 
 export class Settings {

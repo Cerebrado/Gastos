@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Item, Settings } from '../model';
+import { Item, Settings } from '../Model';
 
 @Component({
   selector: 'app-settings',
@@ -30,5 +30,11 @@ export class SettingsComponent implements OnInit {
 
   settingsChanged() {
     this.SettingsChange.emit(this.Settings);
+  }
+
+  getUniqueCategories() {
+    return this.items
+      .map((x) => x.Category)
+      .filter((element, index, arr) => arr.indexOf(element) === index);
   }
 }
