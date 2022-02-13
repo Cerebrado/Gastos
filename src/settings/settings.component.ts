@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Item, Settings } from '../Model';
+import { Item, Settings } from '../model';
 
 @Component({
   selector: 'app-settings',

@@ -7,7 +7,7 @@ export class DataModel {
     this.Settings.OutcomesList = [
       new Item('Baño', 'Jabon', 0),
       new Item('Baño', 'Shampoo', 0),
-      new Item('limpieza', 'Escoba', 0),
+      new Item('Limpieza', 'Escoba', 0),
     ];
     this.Operation = new Array<Operation>();
   }
