@@ -1,24 +1,28 @@
 <div class="container">
-  <ul class="nav nav-pills nav-justified">
-    <li class="nav-item" (click)="setSelectedTab(0)">
+  <ul class="nav nav-tabs nav-fill">
+    <li class="nav-item">
       <a
-        class="nav-link"
+        class="nav-link text-danger"
         [ngClass]="{ active: selectedTab == 0 }"
         href="#"
+        (click)="setSelectedTab(0)"
+        >Gastos</a
       >
-        Gastos
-      </a>
     </li>
-    <li class="nav-item" (click)="setSelectedTab(1)">
-      <a class="nav-link" 
-        href="#" 
+    <li class="nav-item">
+      <a
+        class="nav-link text-success"
         [ngClass]="{ active: selectedTab == 1 }"
+        href="#"
+        (click)="setSelectedTab(1)"
+        >Ingresos</a
       >
-        Ingresos
-      </a>
     </li>
   </ul>
-  <h3 *ngIf="selectedTab == 0">Gastos</h3>
-  <h3 *ngIf="selectedTab == 1">Ingresos</h3>
-  <
+  <br />
+  <h3 *ngIf="selectedTab == 0" class="text-danger">Gastos</h3>
+  <h3 *ngIf="selectedTab == 1" class="text-success">Ingresos</h3>
+
+
+  
 </div>
