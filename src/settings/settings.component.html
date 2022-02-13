@@ -1,1 +1,24 @@
-settings works!
+<div class="container">
+  <ul class="nav nav-pills nav-justified">
+    <li class="nav-item" (click)="setSelectedTab(0)">
+      <a
+        class="nav-link"
+        [ngClass]="{ active: selectedTab == 0 }"
+        href="#"
+      >
+        Gastos
+      </a>
+    </li>
+    <li class="nav-item" (click)="setSelectedTab(1)">
+      <a class="nav-link" 
+        href="#" 
+        [ngClass]="{ active: selectedTab == 1 }"
+      >
+        Ingresos
+      </a>
+    </li>
+  </ul>
+  <h3 *ngIf="selectedTab == 0">Gastos</h3>
+  <h3 *ngIf="selectedTab == 1">Ingresos</h3>
+  <
+</div>

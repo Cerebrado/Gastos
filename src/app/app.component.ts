@@ -5,7 +5,7 @@ import { Component, VERSION } from '@angular/core';
   templateUrl: './app.component.html',
 })
 export class AppComponent {
-  public selectedTab: number = 1;
+  public selectedTab: number = 2;
 
   setSelectedTab(x: number) {
     this.selectedTab = x;
