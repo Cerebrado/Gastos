@@ -6,7 +6,7 @@ import { DataModel } from '../model';
   templateUrl: './app.component.html',
 })
 export class AppComponent {
-  public selectedTab: number = 2;
+  public selectedTab: number = 0;
 
   public DataModel: DataModel;
 
