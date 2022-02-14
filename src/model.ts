@@ -60,11 +60,26 @@ export class Month {
 
 export class Operation {
   public Date: Date;
-  public Quantity: number;
   public Category: string;
   public Name: string;
   public Description: string;
   public Price: number;
-  public IsRecurrent: boolean;
+  public Quantity: number;
   public isIncoming: boolean;
+
+  constructor(
+    item: Item,
+    date: Date,
+    price: number,
+    quantity: number,
+    isIncoming: boolean
+  ) {
+    this.Date = date;
+    this.Category = item.Category;
+    this.Name = item.Name;
+    this.Description = item.Description;
+    this.Price = price;
+    this.Quantity = quantity;
+    this.isIncoming = isIncoming;
+  }
 }
