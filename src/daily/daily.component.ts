@@ -19,24 +19,31 @@ export class DailyComponent implements OnInit {
   }
 
   getNumbers(periodsAgo: number, isIncome: boolean) {
+    let result: number = 0;
     var today = new Date();
     if (this.periodSelector == 'M') {
       if (periodsAgo == 0) {
         let currentMonth = this.selectMonthForDate(today);
-        if (!currentMonth) return 0;
-        return this.calculate(currentMonth, isIncome);
+        if (currentMonth)
+          return this.calculate(currentMonth, isIncome).toLocaleString(
+            'EN-us',
+            { minimumFractionDigits: 2 }
+          );
       }
 
       if (periodsAgo == 1) {
         today.setDate(0); //set the date to the latest day of the previous month.
         let pastMonth = this.selectMonthForDate(today);
-        if (!pastMonth) return 0;
-        return this.calculate(pastMonth, isIncome);
+        if (pastMonth)
+          return this.calculate(pastMonth, isIncome).toLocaleString('EN-us', {
+            minimumFractionDigits: 2,
+          });
       }
     }
+    return '0.00';
   }
 
-  calculate(currentMonth: Month, isIncome: boolean) {
+  calculate(currentMonth: Month, isIncome: boolean): number {
     throw new Error('Method not implemented.');
   }
 
