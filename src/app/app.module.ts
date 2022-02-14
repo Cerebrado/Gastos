@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-import { GastosComponent } from '../gastos/gastos.component';
+import { DailyComponent } from '../daily/daily.component';
 import { StatsComponent } from '../stats/stats.component';
 import { SettingsComponent } from '../settings/settings.component';
 
@@ -10,7 +10,7 @@ import { SettingsComponent } from '../settings/settings.component';
   imports: [BrowserModule, FormsModule],
   declarations: [
     AppComponent,
-    GastosComponent,
+    DailyComponent,
     StatsComponent,
     SettingsComponent,
   ],

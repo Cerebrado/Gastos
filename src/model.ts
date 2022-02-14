@@ -5,10 +5,12 @@ export class DataModel {
   constructor() {
     this.Settings = new Settings();
     this.Settings.OutcomesList = [
-      new Item('Baño', 'Jabon', 0),
-      new Item('Baño', 'Shampoo', 0),
-      new Item('Limpieza', 'Escoba', 0),
+      new Item('Baño', 'Jabon', '', 0, false),
+      new Item('Baño', 'Shampoo','', 0, false),
+      new Item('Limpieza', 'Escoba', '', 0, false),
     ];
+    this.Settings.IncomesList = [new Item('General', 'Salary','', 0, true)];
+
     this.Operation = new Array<Operation>();
   }
 }
@@ -16,12 +18,17 @@ export class DataModel {
 export class Item {
   public Category: string;
   public Name: string;
+  public Description: string;
   public Price: number;
+  public IsRecurrent: boolean;
 
-  constructor(category: string, name: string, price: number) {
+
+  constructor(category: string, name: string, description:string,price: number, isReccurrent: boolean) {
     this.Category = category;
     this.Name = name;
+    this.Description = description;
     this.Price = price;
+    this.IsRecurrent = isReccurrent;
   }
 }
 
@@ -43,5 +50,6 @@ export class Period {
 
 export class Operation {
   public Date: Date;
-  public Item: Item[];
+  public Item: Item;
+  public Quantity: number;
 }

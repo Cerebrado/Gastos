@@ -13,13 +13,11 @@ export class SettingsComponent implements OnInit {
   public selectedTab: number;
   public items: Item[];
 
-  constructor() {
-    this.selectedTab = 0;
-  }
+  constructor() {}
 
   ngOnInit() {
     this.selectedTab = 0;
-    this.items = this.Settings.IncomesList;
+    this.items = this.Settings.OutcomesList;
   }
 
   setSelectedTab(x: number) {
@@ -36,5 +34,11 @@ export class SettingsComponent implements OnInit {
     return this.items
       .map((x) => x.Category)
       .filter((element, index, arr) => arr.indexOf(element) === index);
+  }
+
+  getItemsForCategory(category: string) {
+    return this.items.filter(
+      (element, index, arr) => element.Category == category
+    );
   }
 }
