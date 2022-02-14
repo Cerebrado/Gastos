@@ -22,8 +22,8 @@
 </ul>
 <div *ngIf="selectedTab == 0">
   <app-daily
-    [(CurrentPeriod)]="DataModel.Periods[DataModel.Periods.length - 1]"
-    [PastPeriod]="DataModel.Periods[DataModel.Periods.length - 2]"
+    [(CurrentMonth)]="DataModel.Months[DataModel.Months.length - 1]"
+    [PastMonth]="DataModel.Months[DataModel.Months.length - 2]"
   ></app-daily>
 </div>
 <div *ngIf="selectedTab == 1">

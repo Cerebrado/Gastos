@@ -39,7 +39,6 @@ export class Item {
 export class Settings {
   public IncomesList: Item[];
   public OutcomesList: Item[];
-  public Period: Period;
 
   constructor() {
     this.IncomesList = new Array<Item>();
@@ -47,19 +46,25 @@ export class Settings {
   }
 }
 
-export class Period {
-  public From: Date;
-  public To: Date;
-  public Operations: Operation[] = new Array<Operation>();
+export class Month {
+  public Month: number;
+  public Year: number;
+  public Operations: Operation[];
 
-  constructor(from: Date, to: Date) {
-    this.From = from;
-    this.To = to;
+  constructor(month: number, year: number) {
+    this.Month = month;
+    this.Year = year;
+    this.Operations = new Array<Operation>();
   }
 }
 
 export class Operation {
   public Date: Date;
-  public Item: Item;
   public Quantity: number;
+  public Category: string;
+  public Name: string;
+  public Description: string;
+  public Price: number;
+  public IsRecurrent: boolean;
+  public isIncoming: boolean;
 }
