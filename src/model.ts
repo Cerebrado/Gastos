@@ -1,6 +1,6 @@
 export class DataModel {
   public Settings: Settings;
-  public Periods: Period[];
+  public Months: Month[];
 
   constructor() {
     this.Settings = new Settings();
@@ -10,7 +10,7 @@ export class DataModel {
       new Item('Limpieza', 'Escoba', '', 0, false),
     ];
     this.Settings.IncomesList = [new Item('General', 'Salario', '', 0, true)];
-    this.Periods = new Array<Period>();
+    this.Months = new Array<Month>();
   }
 }
 
